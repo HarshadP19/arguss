@@ -1,0 +1,1 @@
+import{c as e}from"./useStore-C8ED_6ec.js";import{i as t,t as n}from"./AppShell-BZojA95q.js";import{C as r}from"./index-z_ZOmuU9.js";var i=e();function a(){return(0,i.jsx)(t,{children:(0,i.jsx)(n,{children:(0,i.jsx)(r,{})})})}export{a as component};

@@ -1,0 +1,137 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ARGUSS design system — industrial control-room theme.
+ * Committed dark slate. Status colours are semantic only.
+ * All numeric data uses the mono stack (font-data / .num).
+ */
+
+@theme inline {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 10px;
+  --radius-3xl: 12px;
+  --radius-4xl: 12px;
+
+  --font-sans: "Inter", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-data: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-normal: var(--status-normal);
+  --color-warning: var(--status-warning);
+  --color-danger: var(--status-danger);
+  --color-info: var(--status-info);
+  --color-chart-1: var(--status-info);
+  --color-chart-2: var(--status-normal);
+  --color-chart-3: var(--status-warning);
+  --color-chart-4: var(--status-danger);
+  --color-chart-5: var(--muted-foreground);
+  --color-sidebar: var(--surface);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--surface-raised);
+  --color-sidebar-accent-foreground: var(--foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 8px;
+  --background: oklch(0.178 0.008 265);
+  --foreground: oklch(0.925 0.002 265);
+  --surface: oklch(0.208 0.008 265);
+  --surface-raised: oklch(0.238 0.009 265);
+  --card: oklch(0.208 0.008 265);
+  --card-foreground: oklch(0.925 0.002 265);
+  --popover: oklch(0.221 0.009 265);
+  --popover-foreground: oklch(0.925 0.002 265);
+  --primary: oklch(0.398 0.062 250);
+  --primary-foreground: oklch(0.96 0.002 265);
+  --secondary: oklch(0.253 0.009 265);
+  --secondary-foreground: oklch(0.9 0.002 265);
+  --muted: oklch(0.245 0.008 265);
+  --muted-foreground: oklch(0.62 0.017 258);
+  --accent: oklch(0.32 0.058 250);
+  --accent-foreground: oklch(0.95 0.002 265);
+  --destructive: oklch(0.577 0.216 27.3);
+  --destructive-foreground: oklch(0.97 0.002 265);
+  --border: oklch(0.288 0.009 265);
+  --border-strong: oklch(0.36 0.012 265);
+  --input: oklch(0.288 0.009 265);
+  --ring: oklch(0.52 0.09 250);
+  --status-normal: oklch(0.606 0.152 149);
+  --status-warning: oklch(0.769 0.166 70);
+  --status-danger: oklch(0.577 0.216 27.3);
+  --status-info: oklch(0.546 0.226 264);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility num {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@utility label-xs {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@utility panel {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+}
